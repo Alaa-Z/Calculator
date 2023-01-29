@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculatorApp.MainPage">
+
+     <ContentPage.Resources>
+        <Style x:Key="OrangeStyle" TargetType="Button">
+            <Setter Property="Background" Value="#fb9e0c" />
+            <Setter Property="FontSize" Value="35" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BorderWidth" Value="0.5" />
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+
+        <Style x:Key="LightGrayStyle" TargetType="Button">
+            <Setter Property="Background" Value="#5d6865" />
+            <Setter Property="FontSize" Value="35" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BorderWidth" Value="0.5" />
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+         <Style x:Key="DarkGrayGStyle" TargetType="Button">
+            <Setter Property="Background" Value="#3c4b48" />
+            <Setter Property="FontSize" Value="35" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="BorderWidth" Value="0.5" />
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+     </ContentPage.Resources>
+
+        <Grid Background="#263937"
+              RowDefinitions="*,*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*"
+        >
+
+        <Label x:Name="resultLabel" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"
+               FontSize="40" TextColor="white" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Margin="20"></Label>
+
+        <Button x:Name="ClearBtn" Grid.Row="1" Grid.Column="0"  Clicked="Clear" Style="{StaticResource DarkGrayGStyle}"/>
+        <Button Text="+/-" Grid.Row="1" Grid.Column="1" Clicked="PlusMinus"   Style="{StaticResource DarkGrayGStyle}"/>
+        <Button Text="%" Grid.Row="1" Grid.Column="2"  Clicked="Percent" Style="{StaticResource DarkGrayGStyle}" />
+        <Button Text="÷" Grid.Row="1" Grid.Column="3"   Clicked="SelectOperator" Style="{StaticResource OrangeStyle}" />
+
+        <Button Text="7" Grid.Row="2" Grid.Column="0" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="8" Grid.Row="2" Grid.Column="1" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="9" Grid.Row="2" Grid.Column="2" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}" />
+        <Button Text="×" Grid.Row="2" Grid.Column="3"  Clicked="SelectOperator" Style="{StaticResource OrangeStyle}" />
+
+        <Button Text="4" Grid.Row="3" Grid.Column="0" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}" />
+        <Button Text="5" Grid.Row="3" Grid.Column="1" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="6" Grid.Row="3" Grid.Column="2" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="-" Grid.Row="3" Grid.Column="3"  Clicked="SelectOperator" Style="{StaticResource OrangeStyle}" />
+
+        <Button Text="1" Grid.Row="4" Grid.Column="0" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}" />
+        <Button Text="2" Grid.Row="4" Grid.Column="1" Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="3" Grid.Row="4" Grid.Column="2" Clicked="SelectNumber"  Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="+" Grid.Row="4" Grid.Column="3"  Clicked="SelectOperator" Style="{StaticResource OrangeStyle}" />
+
+        
+        <Button Text="0" Grid.Row="5" Grid.Column="0"  Clicked="SelectNumber" Style="{StaticResource LightGrayStyle}" />
+        <Button Text="⌫" Grid.Row="5" Grid.Column="1"  Clicked="Backspace" Style="{StaticResource LightGrayStyle}" />
+
+        <Button Text="," Grid.Row="5" Grid.Column="2" Clicked="DecimalNumber" Style="{StaticResource LightGrayStyle}"/>
+        <Button Text="=" Grid.Row="5" Grid.Column="3"  Clicked="Calculate" Style="{StaticResource OrangeStyle}" />
+        </Grid>
+
+</ContentPage>
